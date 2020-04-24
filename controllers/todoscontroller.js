@@ -53,4 +53,32 @@ module.exports = {
       res.status(403).json({ e });
     }
   },
+  patchOneToDo: async(req, res) => {
+
+    const { id } = req.params;
+    const { text_list } = req.body;
+    try {
+      await connection.query(todoQueries.updateToDoTextById, [ text_list ,  id ]);
+      const [todos] = await connection.query(todoQueries.findTodoById,  id );
+      console.log(todos);
+      res.status(200).json(todos)
+    } catch (e) {
+      res.status(403).json({ e });
+    }
+  },
+  putOneToDo: async(req, res) => {
+    const { id } = req.params;
+    const { text } = req.body;
+ 
+    try {
+      const [todos] = await connection.query(todoQueries.findTodoById,  id );
+      const foundTodo = todos[0];
+
+      await connection.query(todoQueries.updateToDoTextById, [ text_list , !foundTodo.completed,  id ]);
+      const [todosUpdated] = await connection.query(getTodoById, { id });
+      res.json(todosUpdated[0]);
+    } catch (e) {
+      res.status(403).json({ e });
+    }
+  }
 };

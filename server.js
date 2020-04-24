@@ -92,20 +92,7 @@ app.use(routes);
 //   }
 // });
 
-// app.delete('/api/todos/:id', async (req, res) => {
-//   const query = 'DELETE FROM to_do_list WHERE ?;';
-//   const query2 = 'SELECT * FROM to_do_list'
-//   const { id } = req.params;
-//   try {
-//     await connection.query(query, { id });
-//     const [todos] = await connection.query(query2);
-//     console.log(todos);
-//     res.status(200).json(todos)
 
-//   } catch (e) {
-//     res.status(403).json({ e });
-//   }
-// });
 
 // // patch is for 1 piece of a data's data
 // app.patch('/api/todos/:id', async (req, res) => {
@@ -130,7 +117,7 @@ app.use(routes);
 //   // you will uodate the text of that todo into what the user is updating it to
 //   // after you update the data, send bac the newely updated data as a response
 // });
-// // put is for multiple properities of some data
+// put is for multiple properities of some data
 // app.put('/api/todos/:id', async (req, res) => {
 //   const { id } = req.params;
 //   const { text } = req.body;
