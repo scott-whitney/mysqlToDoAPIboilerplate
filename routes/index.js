@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const apiRoutes = require('./apiRoutes')
+const apiRoutes = require('./apiroutes');
 // slash prepended to every route
 // router.get('/', (req, res) => {
 //   res.send('Hello!');

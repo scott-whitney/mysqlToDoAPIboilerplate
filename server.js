@@ -1,8 +1,8 @@
-const express = require("express");
+const express = require('express');
 // the filename index is a special name in Node
 // if we require a folder in Node and we dont specify a file name
 // node will automitcally look for an index.js inside of that folder.
-const routes = require("./routes");
+const routes = require('./routes');
 
 
 
